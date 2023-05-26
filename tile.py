@@ -12,4 +12,5 @@ class Tile:
     def __str__(self):
         return str(self.name + " at " + str(self.position))
 
-        
+    def change_position(self, new_position):
+        self.position = new_position        
