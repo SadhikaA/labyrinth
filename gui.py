@@ -1,15 +1,30 @@
 from tkinter import * 
 import random 
 
-# create root window
-root = Tk()
+root = Tk()       # create root window
+root.title("Labyrinth Game")     # root window title and dimension
+root.geometry('800x800')   # Set geometry (width x height)
  
-# root window title and dimension
-root.title("Labyrinth Game")
+# Creating a label widget
+label = Label(root, text="Labyrinth Game")
+label.grid(row=1, column=1)
 
-# Set geometry (widthxheight)
-root.geometry('800x800')
- 
+# buttons 
+end = Button(root, text="End Game", command=root.quit, fg="red", bg="#FBD5D5")
+end.grid(row=2, column=1)
+
+shuffle = Button(root, text="Shuffle Cards")     # command=shuffle_deck
+shuffle.grid(row=3, column=0)
+
+# functions 
+def shuffle_deck():
+    # shuffle deck of cards
+    pass
+
+# create frame for cards
+card_frame = Frame(root, bg="#FBD5D5", width=600, height=600)
+card_frame.grid(row=3, column=3, rowspan=4, columnspan=4)
+card_label = Label(card_frame, text="Cards", bg="#FBD5D5")
 
 # adding menu bar in root window
 # new item in menu bar labelled as 'New'
@@ -19,10 +34,6 @@ item = Menu(menu)
 item.add_command(label='New')
 menu.add_cascade(label='File', menu=item)
 root.config(menu=menu)
-
-#adding a label to the root window
-label = Label(root, text = "Rules of the Game")
-label.grid()
 
 # Execute Tkinter
 root.mainloop()
