@@ -22,7 +22,7 @@ def shuffle_deck():
     pass
 
 # create frame for cards
-card_frame = Frame(root, bg="#FBD5D5", width=600, height=600)
+card_frame = Frame(root, bg="#FBD5D5", bd=5)
 card_frame.grid(row=3, column=3, rowspan=4, columnspan=4)
 card_label = Label(card_frame, text="Cards", bg="#FBD5D5")
 
