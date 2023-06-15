@@ -9,10 +9,16 @@ root.geometry('800x800')   # Set geometry (width x height)
 label = Label(root, text="Labyrinth Game")
 label.grid(row=1, column=1)
 
-# buttons 
+# create frame for cards
+card_frame = Frame(root, bg="#FBD5D5", bd=5)
+card_frame.grid(row=3, column=3, rowspan=4, columnspan=4)
+card_label = Label(card_frame, text="Cards", bg="#FBD5D5")
+
+# end game button  
 end = Button(root, text="End Game", command=root.quit, fg="red", bg="#FBD5D5")
 end.grid(row=2, column=1)
 
+# shuffle button 
 shuffle = Button(root, text="Shuffle Cards")     # command=shuffle_deck
 shuffle.grid(row=3, column=0)
 
@@ -20,11 +26,6 @@ shuffle.grid(row=3, column=0)
 def shuffle_deck():
     # shuffle deck of cards
     pass
-
-# create frame for cards
-card_frame = Frame(root, bg="#FBD5D5", bd=5)
-card_frame.grid(row=3, column=3, rowspan=4, columnspan=4)
-card_label = Label(card_frame, text="Cards", bg="#FBD5D5")
 
 # adding menu bar in root window
 # new item in menu bar labelled as 'New'
